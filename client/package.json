@@ -1,0 +1,42 @@
+{
+  "name": "bookshop",
+  "version": "1.0.0",
+  "description": "Simple Single Page Application with Java EE REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swhp/javaee-angularjs.git"
+  },
+  "keywords": [
+    "angularjs",
+    "REST",
+    "Java",
+    "EE"
+  ],
+  "author": "Sukma Wardana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swhp/javaee-angularjs/issues"
+  },
+  "homepage": "https://github.com/swhp/javaee-angularjs#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.6.4",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-karma": "^2.0.0",
+    "karma": "^1.6.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4"
+  },
+  "scripts": {
+      "postinstall": "bower install"
+  }
+}
