@@ -12,45 +12,45 @@ module.exports = function(grunt) {
             'beforeconcat': ['src/**/*.js'],
         },
         'copy': {
-            'public': {
+            '../server/src/main/webapp': {
                 'files': [
                     // copy index.html
                     {
                         'expand': true,
                         'src': ['index.html'],
-                        'dest': 'public/',
+                        'dest': '../server/src/main/webapp/',
                         'filter': 'isFile',
                     },
                     // copy html template in views
-                    {'expand': true, 'src': ['views/**'], 'dest': 'public/'},
-                    {'expand': true, 'src': ['assets/**'], 'dest': 'public/'},
+                    {'expand': true, 'src': ['views/**'], 'dest': '../server/src/main/webapp/'},
+                    {'expand': true, 'src': ['assets/**'], 'dest': '../server/src/main/webapp/'},
                 ]
             },
             'libs': {
                 'files': [
-                    {'expand': true, 'src': ['bower_components/bootstrap/dist/**'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angular/*.min.js'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angular-animate/*.min.js'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angular-bootstrap/*.min.js'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angular-route/*.min.js'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angular-touch/*.min.js'], 'dest': 'public/', 'filter': 'isFile'},
-                    {'expand': true, 'src': ['bower_components/angularUtils-pagination/*.js'], 'dest': 'public/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/bootstrap/dist/**'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular-animate/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular-bootstrap/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular-route/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular-touch/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angularUtils-pagination/*.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
                 ]
             }
         },
         'concat': {
             'dist': {
                 'src': ['src/**/*.js'],
-                'dest': 'public/assets/js/jar.js'
+                'dest': '../server/src/main/webapp/assets/js/jar.js'
             }
         },
         'uglify': {
             'options': {
                 'mangle': false,
             },
-            'public': {
+            '../server/src/main/webapp': {
                 'files': {
-                    'public/assets/js/jar.min.js': ['public/assets/js/jar.js']
+                    '../server/src/main/webapp/assets/js/jar.min.js': ['../server/src/main/webapp/assets/js/jar.js']
                 }
             }
         },
