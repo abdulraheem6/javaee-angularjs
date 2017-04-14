@@ -12,6 +12,7 @@
         .module('bookshopApp', [
             'ngTouch',
             'ngRoute',
+            'ngResource',
             'ui.bootstrap',
             'angularUtils.directives.dirPagination'
         ])

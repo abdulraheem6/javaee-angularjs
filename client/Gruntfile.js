@@ -34,6 +34,7 @@ module.exports = function(grunt) {
                     {'expand': true, 'src': ['bower_components/angular-bootstrap/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
                     {'expand': true, 'src': ['bower_components/angular-route/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
                     {'expand': true, 'src': ['bower_components/angular-touch/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
+                    {'expand': true, 'src': ['bower_components/angular-resource/*.min.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
                     {'expand': true, 'src': ['bower_components/angularUtils-pagination/*.js'], 'dest': '../server/src/main/webapp/', 'filter': 'isFile'},
                 ]
             }
