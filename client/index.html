@@ -43,6 +43,12 @@
             </div>
         </nav>
 
+        <div ng-controller="AlertCtrl">
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">
+                {{ alert.msg }}
+            </div>
+        </div>
+        
         <div class="container" ng-view="">
             <!-- Content will loaded in here -->
         </div>
