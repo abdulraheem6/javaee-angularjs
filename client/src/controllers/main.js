@@ -7,7 +7,6 @@
  * @description
  * # MainCtrl for Main Page
  */
-
 angular.module('bookshopApp')
     .controller('MainCtrl', function($log, $scope, $rootScope, BookService) {
         
