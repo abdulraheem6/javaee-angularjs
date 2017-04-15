@@ -31,6 +31,10 @@
                 })
                 .when('/contact', {
                     templateUrl: 'views/contact.html'
+                })
+                .when('/admin/books', {
+                    templateUrl: 'views/book.html',
+                    controller: 'BookCtrl'
                 });
 
         });
