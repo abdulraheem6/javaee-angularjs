@@ -35,6 +35,14 @@
                 .when('/admin/books', {
                     templateUrl: 'views/book.html',
                     controller: 'BookCtrl'
+                })
+                .when('/admin/books/add', {
+                    templateUrl: 'views/book_form.html',
+                    controller: 'BookAddCtrl'
+                })
+                .when('/admin/books/edit/:slug', {
+                    templateUrl: 'views/book_form.html',
+                    controller: 'BookAddCtrl'
                 });
 
         });
