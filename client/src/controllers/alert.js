@@ -1,0 +1,29 @@
+(function() {
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name bookshopApp:controller:AlertCtrl
+ * @description
+ * # Retrieve all broadcast about alert
+ */
+
+angular.module('bookshopApp')
+    .controller('AlertCtrl', function($log, $scope) {
+        
+        //remove alert
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+        };
+        
+        // Picks event about error message
+        $scope.$on('error', function() {
+            $scope.alerts = [{
+                    type: 'danger', 
+                    msg: 'There was a problem in the server!'
+            }];
+        });
+        
+    });
+})();
+
