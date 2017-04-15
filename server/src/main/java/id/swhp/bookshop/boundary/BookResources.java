@@ -113,6 +113,7 @@ public class BookResources {
                 .add("summary", book.getSummary())
                 .add("stock", book.getStock())
                 .add("tax_included", book.getTaxIncluded())
+                .add("slug", book.getSlug())
                 .add("_links", Json.createObjectBuilder()
                         .add("rel", "self")
                         .add("href", self.toString())
