@@ -7,7 +7,6 @@
  * @description
  * # Retrieve all broadcast about alert
  */
-
 angular.module('bookshopApp')
     .controller('AlertCtrl', function($log, $scope) {
         
@@ -21,6 +20,14 @@ angular.module('bookshopApp')
             $scope.alerts = [{
                     type: 'danger', 
                     msg: 'There was a problem in the server!'
+            }];
+        });
+        
+        // Picks event about success message
+        $scope.$on('success', function() {
+            $scope.alerts = [{
+                    type: 'success', 
+                    msg: 'Operation is success!'
             }];
         });
         
