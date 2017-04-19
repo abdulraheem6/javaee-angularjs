@@ -102,6 +102,15 @@ public class BookResources {
 
         return Response.ok().build();
     }
+    
+    @GET
+    @Path("{slug}/orders")
+    public Response checkOrder(@PathParam("slug") String slug) {
+        URI self = uriBuilder(slug);
+        JsonObject book = this.bookShop.checkOrder(slug, self);
+        
+        return Response.ok().entity(book).build();
+    }
 
     private JsonObject toJson(Book book) {
         URI self = uriBuilder(book.getSlug());
