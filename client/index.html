@@ -5,12 +5,13 @@
         <title>Book Shop</title>
         <meta name="description" content="Single Page Application with Java EE 7 and AngularJS">
         <meta name="author" content="swhp">
-        <meta name="tag" content"angularjs, single page application, REST, Java EE">
+        <meta name="tag" content="angularjs, single page application, REST, Java EE">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    <body ng-app="bookshopApp">
+    <body ng-app="bookshopApp" ng-cloak>
+        <an-loader></an-loader>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -49,7 +50,7 @@
             </div>
         </div>
         
-        <div class="container" ng-view="">
+        <div class="container" ng-cloack ng-view="">
             <!-- Content will loaded in here -->
         </div>
 
