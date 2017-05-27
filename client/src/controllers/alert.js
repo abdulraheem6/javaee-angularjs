@@ -31,6 +31,13 @@ angular.module('bookshopApp')
             }];
         });
         
+        $scope.$on('created', function() {
+            $scope.alerts = [{
+                    type: 'success', 
+                    msg: 'Data is has been saved!'
+            }];
+        });
+        
     });
 })();
 
