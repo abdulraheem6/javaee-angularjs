@@ -8,7 +8,7 @@
  * # business logic in admin dashboard
  */
 angular.module('bookshopApp')
-    .controller('BookAddCtrl', function($log, $scope, $rootScope, $routeParams, BookService) {
+    .controller('BookAddCtrl', function($log, $scope, $routeParams, BookService) {
         
         var slug = $routeParams.slug;
         $log.debug('slug: ' + slug);
@@ -17,8 +17,6 @@ angular.module('bookshopApp')
             BookService.get({'slug': slug}, function(data) {
                 $scope.book = data;
             }, function(error) {
-                // Broadcast event for server error
-                $rootScope.$broadcast('error');
             });
         } else {
             $scope.book = {
@@ -30,24 +28,11 @@ angular.module('bookshopApp')
         $scope.submit = function() {
             // check it's perform create or update with slug condition
             if(slug) {
-                BookService.update({'slug': slug}, $scope.book, function() {
-                    // Broadcast success event 
-                    $rootScope.$broadcast('success');
-                }, function(error) {
-                    // Broadcast event for server error
-                    $rootScope.$broadcast('error');
-                });
+                BookService.update({'slug': slug}, $scope.book);
             } else {
-                BookService.save($scope.book, function() {
-                    // Broadcast success event 
-                    $rootScope.$broadcast('success');
-                }, function(error) {
-                    // Broadcast event for server error
-                    $rootScope.$broadcast('error');
-                });
+                BookService.save($scope.book);
             }
         };
         
     });
 })();
-

@@ -14,8 +14,6 @@ angular.module('bookshopApp')
             $log.debug(books);
             $scope.books = books;
         }, function(error) {
-            // Broadcast even for server error
-            $rootScope.$broadcast('error');
         });
         
         // remove data
@@ -25,12 +23,9 @@ angular.module('bookshopApp')
             $log.debug(uri);
             
             BookService.delete({'slug': uri}, function() {
-                // Broadcast success event 
-                $rootScope.$broadcast('success');
+                // Broadcast success event
                 $rootScope.$broadcast('refreshTable');
             }, function(error) {
-                // Broadcast event for server error
-                $rootScope.$broadcast('error');
             });
         };
         
@@ -39,8 +34,6 @@ angular.module('bookshopApp')
                 $log.debug(books);
                 $scope.books = books;
             }, function(error) {
-                // Broadcast even for server error
-                $rootScope.$broadcast('error');
             });
         });
         
@@ -56,4 +49,3 @@ angular.module('bookshopApp')
         
     });
 })();
-
