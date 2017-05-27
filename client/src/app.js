@@ -16,10 +16,12 @@
             'ui.bootstrap',
             'angularUtils.directives.dirPagination'
         ])
-        .config(function($routeProvider, $compileProvider, $logProvider) {
+        .config(function($routeProvider, $compileProvider, $logProvider, $httpProvider) {
             //TODO: always uncomment source code below in production
             $compileProvider.debugInfoEnabled(false);
             $logProvider.debugEnabled(false);
+            
+            $httpProvider.interceptors.push('anInterceptor');
 
             $routeProvider
                 .when('/', {
