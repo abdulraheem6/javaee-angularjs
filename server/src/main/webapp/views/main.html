@@ -1,0 +1,29 @@
+<h1>Welcome!!!</h1>
+<hr />
+<an-search></an-search>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr dir-paginate="book in books | filter: search | itemsPerPage: 5">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.price }}</td>
+            <td><button type="button" class="btn btn-success">Order</button></td>
+        </tr>
+    </tbody>
+</table>
+<dir-pagination-controls
+    max-size:"5"
+    directions-links="true"
+    boundary-links="true">
+</dir-pagination-controls>
